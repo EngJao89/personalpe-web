@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "ignoreDeprecations": "6.0",
-    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     },
@@ -27,5 +26,5 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": ["src"]
-  
+
 }
