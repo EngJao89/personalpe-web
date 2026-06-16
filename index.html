@@ -1,12 +1,31 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>personalpe-web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>PersonalPE</title>
   </head>
   <body>
+    <script>
+      ;(() => {
+        const storageKey = 'personalpe-theme'
+        const stored = localStorage.getItem(storageKey)
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+        const theme =
+          stored === 'dark' || stored === 'light'
+            ? stored
+            : prefersDark
+              ? 'dark'
+              : 'light'
+
+        document.documentElement.classList.toggle('dark', theme === 'dark')
+
+        const themeColor = document.querySelector('meta[name="theme-color"]')
+        themeColor?.setAttribute('content', theme === 'dark' ? '#000000' : '#ffffff')
+      })()
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
