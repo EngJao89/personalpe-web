@@ -23,21 +23,21 @@ export function HeroSection() {
   }
 
   return (
-    <section className="bg-black text-white">
+    <section className="bg-background text-foreground dark:bg-black dark:text-white">
       <div className="mx-auto grid max-w-6xl md:grid-cols-2 md:items-stretch">
         <div className="flex flex-col gap-4 px-4 py-6 text-left md:gap-5 md:px-6 md:py-8">
           <div className="max-w-lg space-y-2">
             <h1 className="text-xl font-bold uppercase leading-tight tracking-wide sm:text-2xl md:text-3xl">
               Você quer resultados de verdade?
             </h1>
-            <p className="text-xs leading-relaxed text-white/85 sm:text-sm">
+            <p className="text-xs leading-relaxed text-muted-foreground sm:text-sm dark:text-white/85">
               Consultoria online com treino personalizado e acompanhamento direto
               no WhatsApp.
             </p>
           </div>
 
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-center">
-            <div className="relative w-full max-w-md overflow-hidden rounded-sm border border-white/10 bg-zinc-900 sm:max-w-xs">
+            <div className="relative w-full max-w-md overflow-hidden rounded-sm border border-border bg-muted sm:max-w-xs dark:border-white/10 dark:bg-zinc-900">
               <video
                 ref={videoRef}
                 className="aspect-video w-full object-cover"
@@ -62,7 +62,7 @@ export function HeroSection() {
               )}
             </div>
 
-            <p className="text-center text-xl font-bold uppercase leading-none sm:text-left sm:text-2xl md:text-3xl">
+            <p className="text-center text-xl font-bold uppercase leading-none text-foreground sm:text-left sm:text-2xl md:text-3xl dark:text-white">
               <span className="text-[#f5c518]">Assista</span>
               <br />
               ao vídeo
@@ -86,7 +86,7 @@ export function HeroSection() {
             alt="Atleta em corrida durante treino"
             className="absolute inset-0 size-full object-cover object-[center_12%]"
           />
-          <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-background/95 via-background/25 to-transparent dark:from-black/90 dark:via-black/20" />
         </div>
       </div>
     </section>

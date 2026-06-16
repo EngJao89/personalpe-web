@@ -11,7 +11,7 @@ const includedItems = [
 
 export function IncludedSection() {
   return (
-    <section className="bg-black text-white">
+    <section className="bg-background text-foreground dark:bg-black dark:text-white">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-2 md:items-center md:gap-10 md:px-6 md:py-14">
         <div className="flex justify-center md:justify-start">
           <img
