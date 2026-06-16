@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
+import { Link, useLocation } from 'react-router-dom'
 
 import logo from '@/assets/edinan-junior-logo.png'
 import { Button } from '@/components/ui/button'
@@ -15,9 +16,9 @@ import { ThemeToggle } from '@/components/theme-toggle'
 import { cn } from '@/lib/utils'
 
 const navItems = [
-  { label: 'Sobre', href: '#sobre' },
-  { label: 'Serviços', href: '#servicos' },
-  { label: 'Contato', href: '#contato' },
+  { label: 'Sobre', to: '/sobre' },
+  { label: 'Serviços', to: '/#servicos' },
+  { label: 'Contato', to: '/#contato' },
 ] as const
 
 const navLinkClassName = cn(
@@ -27,6 +28,7 @@ const navLinkClassName = cn(
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const location = useLocation()
 
   useEffect(() => {
     document.body.style.overflow = mobileMenuOpen ? 'hidden' : ''
@@ -35,13 +37,17 @@ export function Header() {
     }
   }, [mobileMenuOpen])
 
+  useEffect(() => {
+    setMobileMenuOpen(false)
+  }, [location.pathname])
+
   const closeMobileMenu = () => setMobileMenuOpen(false)
 
   return (
     <header className="sticky top-0 z-50 bg-black text-white">
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-3 px-4 md:h-20 md:gap-8 md:px-6">
-        <a
-          href="#"
+        <Link
+          to="/"
           className="min-w-0 shrink"
           aria-label="Edinan Junior Healthy Performance"
           onClick={closeMobileMenu}
@@ -51,7 +57,7 @@ export function Header() {
             alt="Edinan Junior Healthy Performance"
             className="h-10 w-auto max-w-[min(100%,11rem)] object-contain object-left md:h-16 md:max-w-none"
           />
-        </a>
+        </Link>
 
         <NavigationMenu
           viewport={false}
@@ -59,9 +65,9 @@ export function Header() {
         >
           <NavigationMenuList className="gap-1">
             {navItems.map((item) => (
-              <NavigationMenuItem key={item.href}>
+              <NavigationMenuItem key={item.to}>
                 <NavigationMenuLink asChild className={navLinkClassName}>
-                  <a href={item.href}>{item.label}</a>
+                  <Link to={item.to}>{item.label}</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
             ))}
@@ -101,14 +107,14 @@ export function Header() {
         >
           <ul className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-3">
             {navItems.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
+              <li key={item.to}>
+                <Link
+                  to={item.to}
                   className={navLinkClassName}
                   onClick={closeMobileMenu}
                 >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
             <li className="pt-2">

@@ -1,16 +1,19 @@
-import { Header } from '@/components/Header'
-import { HeroSection } from '@/components/home/hero-section'
-import { IncludedSection } from '@/components/home/included-section'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+
+import { Layout } from '@/components/layout'
+import { AboutPage } from '@/pages/about-page'
+import { HomePage } from '@/pages/home-page'
 
 function App() {
   return (
-    <div className="flex min-h-svh flex-col bg-background">
-      <Header />
-      <main className="flex-1">
-        <HeroSection />
-        <IncludedSection />
-      </main>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="sobre" element={<AboutPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
