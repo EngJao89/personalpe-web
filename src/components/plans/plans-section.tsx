@@ -19,13 +19,13 @@ const plans: Plan[] = [
     id: 'mensal',
     name: 'Mensal',
     price: 'R$289,00',
-    href: '#',
+    href: 'https://pay.hotmart.com/M81484460C?bid=1781829660732',
   },
   {
     id: 'trimestral',
     name: 'Trimestral',
     price: 'R$753,80',
-    href: '#',
+    href: 'https://pay.hotmart.com/P81485120M?bid=1781829738593',
     featured: true,
     image: phonesImage,
   },
@@ -33,13 +33,13 @@ const plans: Plan[] = [
     id: 'semestral',
     name: 'Semestral',
     price: 'R$1.247,25',
-    href: '#',
+    href: 'https://pay.hotmart.com/V81485685L?bid=1781829815078',
   },
   {
     id: 'anual',
     name: 'Anual',
     price: 'R$2.030,00',
-    href: '#',
+    href: 'https://pay.hotmart.com/B84881341D?bid=1781829868441',
   },
 ]
 
@@ -99,7 +99,13 @@ function PlanCard({ plan }: { plan: Plan }) {
           asChild
           className="mx-4 h-11 w-[calc(100%-2rem)] rounded-sm bg-[#f5c518] text-sm font-bold text-black uppercase hover:bg-[#e0b310]"
         >
-          <a href={plan.href}>Eu quero!</a>
+          <a
+            href={plan.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Eu quero!
+          </a>
         </Button>
       </CardFooter>
     </Card>
