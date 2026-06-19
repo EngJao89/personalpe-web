@@ -17,7 +17,7 @@ import { cn } from '@/lib/utils'
 
 const navItems = [
   { label: 'Sobre', to: '/sobre' },
-  { label: 'Serviços', to: '/#servicos' },
+  { label: 'Planos', to: '/planos' },
   { label: 'Contato', to: '/#contato' },
 ] as const
 
