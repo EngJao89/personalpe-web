@@ -122,12 +122,12 @@ export function PlansSection() {
           aria-hidden
           className="absolute inset-0 size-full object-cover object-center grayscale"
         />
-        <div className="absolute inset-0 bg-black/75 dark:bg-black/80" />
-        <div className="relative mx-auto max-w-4xl px-4 py-10 text-center sm:py-14">
-          <h1 className="text-xl font-bold uppercase tracking-wide sm:text-2xl md:text-3xl">
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative mx-auto max-w-4xl px-4 py-10 text-center text-white sm:py-14">
+          <h1 className="text-xl font-bold uppercase tracking-wide drop-shadow-sm sm:text-2xl md:text-3xl">
             Atenção: valor promocional
           </h1>
-          <p className="mt-3 text-sm text-white/90 sm:text-base">
+          <p className="mt-3 text-sm text-white/95 sm:text-base">
             Para os 20 primeiros alunos na Consultoria Online no mês de Maio!
           </p>
         </div>
